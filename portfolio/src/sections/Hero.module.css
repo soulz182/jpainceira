@@ -1,0 +1,193 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 7rem;
+}
+
+/* ─── Fondo ───────────────────────────────────────────────────────────────── */
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  will-change: transform;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+  opacity: 0.4;
+}
+
+.blob1 {
+  position: absolute;
+  top: 10%;
+  right: -5%;
+  width: min(600px, 80vw);
+  height: min(600px, 80vw);
+  background: radial-gradient(circle, rgba(200,169,110,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+.blob2 {
+  position: absolute;
+  bottom: 0%;
+  left: -10%;
+  width: min(400px, 60vw);
+  height: min(400px, 60vw);
+  background: radial-gradient(circle, rgba(78,205,196,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+/* ─── Contenido ──────────────────────────────────────────────────────────── */
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+}
+
+.topLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  animation: fadeSlideUp 0.8s ease both;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--teal);
+  box-shadow: 0 0 8px var(--teal);
+  animation: blink 2.5s ease infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+.sep { color: var(--text-faint); }
+
+/* ─── Título ────────────────────────────────────────────────────────────── */
+.title {
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 2rem;
+}
+
+.line {
+  display: block;
+  overflow: hidden;
+}
+
+.line1 {
+  color: var(--text);
+  animation: fadeSlideUp 0.8s 0.1s ease both;
+}
+
+.line2 {
+  color: var(--accent);
+  font-style: italic;
+  animation: fadeSlideUp 0.8s 0.2s ease both;
+}
+
+.line3 {
+  color: var(--text);
+  animation: fadeSlideUp 0.8s 0.3s ease both;
+}
+
+.sub {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: var(--text-muted);
+  max-width: 520px;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  animation: fadeSlideUp 0.8s 0.4s ease both;
+}
+
+.ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  animation: fadeSlideUp 0.8s 0.5s ease both;
+}
+
+/* ─── Scroll indicator ───────────────────────────────────────────────────── */
+.scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: var(--gutter);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  animation: fadeSlideUp 0.8s 0.8s ease both;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 3rem;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  animation: scrollPulse 2s ease infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; transform: scaleY(1); }
+  50%       { opacity: 1;   transform: scaleY(1.1); }
+}
+
+.scrollText {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  writing-mode: vertical-rl;
+}
+
+/* ─── Número decorativo ──────────────────────────────────────────────────── */
+.deco {
+  position: absolute;
+  bottom: 2rem;
+  right: var(--gutter);
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 12vw, 10rem);
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-faint);
+  opacity: 0.3;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ─── Animaciones ─────────────────────────────────────────────────────────── */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .scroll { display: none; }
+  .deco { display: none; }
+}

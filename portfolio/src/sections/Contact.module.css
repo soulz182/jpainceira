@@ -1,0 +1,158 @@
+.contact {
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(200,169,110,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(3rem, 8vw, 7rem);
+  align-items: start;
+}
+
+/* ─── Izquierda ─────────────────────────────────────────────────────────── */
+.heading {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  line-height: 1.15;
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  margin-bottom: 2rem;
+  max-width: 420px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+
+a.infoRow:hover {
+  color: var(--accent);
+}
+
+/* ─── Formulario ─────────────────────────────────────────────────────────── */
+.formWrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.field input,
+.field textarea {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  resize: vertical;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  outline: none;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--text-faint);
+}
+
+.submit {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+/* ─── Gracias ────────────────────────────────────────────────────────────── */
+.thanks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  gap: 1rem;
+}
+
+.thanksEmoji {
+  font-size: 2.5rem;
+  color: var(--accent);
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.thanks h3 {
+  font-size: 1.4rem;
+  color: var(--text);
+}
+
+.thanks p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 860px) {
+  .inner { grid-template-columns: 1fr; }
+}
