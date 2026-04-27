@@ -40,12 +40,8 @@ export default function About() {
                 <span className={styles.statLabel}>Años de experiencia</span>
               </div>
               <div className={styles.stat}>
-                <span className={styles.statNum}>30+</span>
+                <span className={styles.statNum}>150+</span>
                 <span className={styles.statLabel}>Proyectos entregados</span>
-              </div>
-              <div className={styles.stat}>
-                <span className={styles.statNum}>∞</span>
-                <span className={styles.statLabel}>Caffeine consumed</span>
               </div>
             </div>
           </div>
