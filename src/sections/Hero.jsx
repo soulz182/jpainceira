@@ -66,11 +66,7 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Scroll indicator */}
-        <a href="#sobre-mi" className={styles.scroll} aria-label="Ir a Sobre mí">
-          <span className={styles.scrollLine} />
-          <span className={styles.scrollText}>Scroll</span>
-        </a>
+      
       </div>
 
       {/* Número decorativo */}
