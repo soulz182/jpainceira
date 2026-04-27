@@ -1,14 +1,14 @@
 // ─── Datos del portfolio ─────────────────────────────────────────────────────
 // Edita este archivo para actualizar todo el contenido de la web.
-
+ 
 export const siteData = {
   name: 'Jesús Painceira',
   fullName: 'Jesús Manuel Painceira Pérez',
   role: 'Desarrollador Front-End',
   location: 'Valencia, España',
   email: 'hola@jesuspainceira.dev',
-  available: true, // cambia a false si no estás disponible
-
+  available: true,
+ 
   hero: {
     headline: 'Construyo\ninterfaces\nque importan.',
     subline:
@@ -16,7 +16,7 @@ export const siteData = {
     cta: 'Ver mi trabajo',
     ctaSecondary: 'Hablemos',
   },
-
+ 
   about: {
     bio: [
       'Me llamo Jesús, tengo 27 años y vivo en Valencia. Llevo más de cuatro años construyendo interfaces web que funcionan de verdad: desde landings que convierten hasta tiendas WooCommerce con miles de productos.',
@@ -25,7 +25,7 @@ export const siteData = {
     ],
     tags: ['Diseño UI/UX', 'Responsive', 'Accesibilidad', 'Performance', 'Figma → Código'],
   },
-
+ 
   stack: [
     {
       category: 'Sólido',
@@ -39,11 +39,11 @@ export const siteData = {
     },
     {
       category: 'Herramientas',
-      color: '#a78bfa',
+      color: '#818cf8',
       items: ['VS Code', 'Webpack', 'Gulp', 'Postman', 'Vercel', 'cPanel', 'Trello', 'Notion'],
     },
   ],
-
+ 
   projects: [
     {
       id: 1,
@@ -53,7 +53,7 @@ export const siteData = {
         'Diseño e integración completa de una tienda WooCommerce para una marca de moda valenciana. Tema custom desde cero con SCSS, filtros AJAX, pasarela de pago Redsys y rendimiento optimizado hasta 95 en PageSpeed.',
       tags: ['WordPress', 'WooCommerce', 'SCSS', 'PHP', 'Redsys'],
       year: '2023',
-      color: '#c8a96e',
+      color: '#4fa3e0',
       featured: true,
     },
     {
@@ -64,7 +64,7 @@ export const siteData = {
         'Maquetación pixel-perfect desde Figma de una landing para un estudio de arquitectura. Animaciones CSS al scroll, galería con Swiper.js y formulario de contacto con PHP.',
       tags: ['HTML', 'SCSS', 'JavaScript', 'PHP', 'Figma'],
       year: '2022',
-      color: '#4ecdc4',
+      color: '#38d9c0',
       featured: true,
     },
     {
@@ -75,7 +75,7 @@ export const siteData = {
         'Web de mi proyecto musical: diseño propio, audio ambient en background, animaciones con CSS custom y canvas para visualizador de audio en JavaScript vanilla.',
       tags: ['HTML', 'CSS', 'JavaScript', 'Canvas API', 'Web Audio API'],
       year: '2023',
-      color: '#a78bfa',
+      color: '#818cf8',
       featured: true,
     },
     {
@@ -86,7 +86,7 @@ export const siteData = {
         'Panel de administración interno para una clínica médica: gestión de citas, historial de pacientes y generación de informes PDF. Backend con PHP y MySQL, interfaz responsive.',
       tags: ['PHP', 'MySQL', 'JavaScript', 'SCSS', 'PDF'],
       year: '2022',
-      color: '#f87171',
+      color: '#34d399',
       featured: false,
     },
     {
@@ -97,7 +97,7 @@ export const siteData = {
         'Migración y rebranding completo de una tienda de equipamiento outdoor a Shopify. Liquid customizado, secciones de producto con upsells, integración con Klaviyo.',
       tags: ['Shopify', 'Liquid', 'JavaScript', 'CSS', 'Klaviyo'],
       year: '2023',
-      color: '#34d399',
+      color: '#2dd4bf',
       featured: false,
     },
     {
@@ -108,38 +108,54 @@ export const siteData = {
         'Librería de componentes UI reutilizables construida en SCSS y Vanilla JS: botones, modales, tooltips, tablas paginadas, formularios validados y sistema de grid propio.',
       tags: ['HTML', 'SCSS', 'JavaScript', 'BEM', 'Storybook'],
       year: '2021',
-      color: '#fbbf24',
+      color: '#60a5fa',
       featured: false,
     },
   ],
-
+ 
   experience: [
     {
-      company: 'Agencia Digital Valencia',
-      role: 'Front-End Developer',
-      period: '2022 — Actualidad',
+      company: 'Avantio',
+      role: 'Web Developer',
+      period: 'Diciembre 2022 — Diciembre 2025',
       description:
-        'Desarrollo de proyectos web para clientes de distintos sectores: e-commerce, hostelería, salud y moda. Responsable de maquetación, optimización y mantenimiento de más de 20 proyectos activos.',
-      highlights: ['WordPress / WooCommerce', 'SCSS + JS Vanilla', 'Shopify', 'Figma → Código'],
+        'Desarrollo y mantenimiento de interfaces web en una empresa de software para gestión de alquileres vacacionales. Trabajo con equipos multidisciplinares, maquetación de nuevas funcionalidades y optimización del producto.',
+      highlights: ['HTML / CSS / JS', 'WordPress', 'SCSS', 'Responsive'],
     },
     {
-      company: 'Freelance',
-      role: 'Desarrollador Web',
-      period: '2020 — 2022',
+      company: 'Ángel Martínez Disseny i Comunicació SL',
+      role: 'Full Stack Developer',
+      period: 'Mayo 2022 — Diciembre 2022',
       description:
-        'Proyectos propios y por encargo: landings, tiendas online, webs corporativas y herramientas internas. Gestión directa con el cliente desde la toma de requisitos hasta el despliegue.',
-      highlights: ['HTML / CSS / PHP', 'PrestaShop', 'WordPress', 'Gestión de proyectos'],
+        'Desarrollo full stack en agencia de diseño y comunicación. Maquetación de proyectos web para clientes, desarrollo de funcionalidades custom y mantenimiento de sitios WordPress.',
+      highlights: ['WordPress', 'PHP', 'JavaScript', 'Diseño web'],
     },
     {
-      company: 'Formación autodidacta',
-      role: 'Transición hacia React',
-      period: '2024 — Hoy',
+      company: 'Glintt España',
+      role: 'Freelance Web Developer',
+      period: 'Febrero 2022 — Mayo 2022',
       description:
-        'Aprendizaje activo de React, TypeScript y Next.js. Construyendo proyectos propios para consolidar el ecosistema moderno de front-end y adaptarme a equipos basados en componentes.',
-      highlights: ['React', 'TypeScript', 'Next.js', 'APIs REST'],
+        'Desarrollo web freelance para empresa del sector salud. Implementación de interfaces y componentes a medida para sus plataformas digitales.',
+      highlights: ['HTML', 'CSS', 'JavaScript', 'PHP'],
+    },
+    {
+      company: 'Information Solutions For Telemedicine SL',
+      role: 'Full-stack Developer',
+      period: 'Marzo 2019 — Octubre 2019',
+      description:
+        'Desarrollo de aplicaciones web para el sector de la telemedicina. Implementación de interfaces de usuario y lógica de servidor para plataformas de atención sanitaria remota.',
+      highlights: ['PHP', 'JavaScript', 'MySQL', 'HTML/CSS'],
+    },
+    {
+      company: 'Hospital General Valencia',
+      role: 'Técnico informático',
+      period: 'Marzo 2016 — Julio 2016',
+      description:
+        'Soporte técnico y mantenimiento de sistemas informáticos en entorno hospitalario. Gestión de incidencias y asistencia a usuarios.',
+      highlights: ['Soporte técnico', 'Redes', 'Sistemas'],
     },
   ],
-
+ 
   services: [
     {
       icon: 'Monitor',
@@ -172,10 +188,9 @@ export const siteData = {
       desc: 'Actualizaciones, backups, corrección de errores, nuevas secciones y mejoras continuas. Para que tu web no sea un problema que tienes que gestionar.',
     },
   ],
-
+ 
   social: [
     { name: 'GitHub', url: 'https://github.com/', icon: 'Github' },
     { name: 'LinkedIn', url: 'https://linkedin.com/', icon: 'Linkedin' },
-    { name: 'Twitter / X', url: 'https://x.com/', icon: 'Twitter' },
   ],
 }
