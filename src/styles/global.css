@@ -18,11 +18,11 @@
   --text-muted:  #7a7a8a;
   --text-faint:  #3a3a48;
 
-  --accent:      #4ecdc4;      
+  --accent:      #c8a96e;      /* dorado cálido */
   --accent-dim:  rgba(200,169,110,0.12);
   --accent-glow: rgba(200,169,110,0.25);
 
-  --teal:        #c8a96e;
+  --teal:        #4ecdc4;
   --teal-dim:    rgba(78,205,196,0.10);
 
   /* Tipografía */
@@ -165,7 +165,7 @@ img, video { max-width: 100%; display: block; }
 }
 
 .btn-primary:hover {
-  background: #2f7772;
+  background: #d4b87a;
   transform: translateY(-1px);
   box-shadow: 0 8px 30px var(--accent-glow);
 }
