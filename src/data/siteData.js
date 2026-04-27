@@ -30,12 +30,12 @@ export const siteData = {
     {
       category: 'Sólido',
       color: 'var(--accent)',
-      items: ['HTML5', 'CSS3 / SCSS', 'JavaScript (ES6+)', 'PHP', 'WordPress', 'WooCommerce', 'Shopify', 'PrestaShop', 'Figma', 'Git'],
+      items: ['HTML5', 'CSS3 / SCSS', 'JavaScript (ES6+)', 'PHP', 'WordPress', 'WooCommerce', 'Shopify', 'PrestaShop', 'REST APIs', 'Figma', 'Git'],
     },
     {
       category: 'En evolución',
       color: 'var(--teal)',
-      items: ['React', 'TypeScript', 'Next.js', 'Vite', 'REST APIs', 'Node.js'],
+      items: ['React', 'TypeScript', 'Next.js', 'Vite', 'Node.js'],
     },
     {
       category: 'Herramientas',
