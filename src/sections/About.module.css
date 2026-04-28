@@ -7,9 +7,7 @@
 .about::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: 1px;
   background: linear-gradient(to right, transparent, var(--border), transparent);
 }
@@ -17,7 +15,7 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
-  gap: clamp(3rem, 8vw, 7rem);
+  gap: clamp(2.5rem, 7vw, 6rem);
   align-items: start;
 }
 
@@ -26,8 +24,8 @@
   top: 8rem;
 }
 
-.left h2 em {
-  font-style: italic;
+.section-title em {
+  font-style: normal;
   color: var(--accent);
 }
 
@@ -38,7 +36,7 @@
   margin-top: 2rem;
 }
 
-/* ─── Bio ──────────────────────────────────────────────────────────────────── */
+/* ─── Bio ──────────────────────────────────────────────── */
 .right {
   display: flex;
   flex-direction: column;
@@ -47,17 +45,17 @@
 
 .bio {
   color: var(--text-muted);
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1.85;
 }
 
 .bio:first-child {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--text);
   font-weight: 400;
 }
 
-/* ─── Stats ───────────────────────────────────────────────────────────────── */
+/* ─── Stats ────────────────────────────────────────────── */
 .stats {
   display: flex;
   gap: 2.5rem;
@@ -82,19 +80,23 @@
 }
 
 .statLabel {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
+/* ─── Responsive ───────────────────────────────────────── */
 @media (max-width: 860px) {
   .grid {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
+  .left { position: static; }
+}
 
-  .left {
-    position: static;
-  }
+@media (max-width: 480px) {
+  .stats { gap: 1.5rem; }
+  .statNum { font-size: 2rem; }
 }

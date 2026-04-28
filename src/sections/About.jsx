@@ -10,12 +10,11 @@ export default function About() {
     <section id="sobre-mi" className={styles.about}>
       <div className="container">
         <div className={styles.grid}>
-          {/* Columna izquierda */}
           <div className={`reveal ${styles.left}`} ref={leftRef}>
             <p className="section-label">Sobre mí</p>
             <h2 className="section-title">
               Desarrollador con<br />
-              <em>alma de diseñador.</em>
+              alma de diseñador.
             </h2>
 
             <div className={styles.tags}>
@@ -25,7 +24,6 @@ export default function About() {
             </div>
           </div>
 
-          {/* Columna derecha */}
           <div className={`reveal ${styles.right}`} ref={rightRef}>
             {siteData.about.bio.map((paragraph, i) => (
               <p key={i} className={styles.bio}>
@@ -33,14 +31,13 @@ export default function About() {
               </p>
             ))}
 
-            {/* Stats */}
             <div className={styles.stats}>
               <div className={styles.stat}>
                 <span className={styles.statNum}>4+</span>
                 <span className={styles.statLabel}>Años de experiencia</span>
               </div>
               <div className={styles.stat}>
-                <span className={styles.statNum}>150+</span>
+                <span className={styles.statNum}>200+</span>
                 <span className={styles.statLabel}>Proyectos entregados</span>
               </div>
             </div>

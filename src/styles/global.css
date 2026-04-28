@@ -6,27 +6,27 @@
 }
 
 :root {
-  /* Paleta */
-  --bg:          #0a0a0b;
-  --bg-2:        #111114;
-  --bg-3:        #18181d;
-  --surface:     #1e1e25;
-  --border:      rgba(255,255,255,0.07);
-  --border-hover:rgba(255,255,255,0.15);
+  /* Paleta — azul corporativo */
+  --bg:          #080c12;
+  --bg-2:        #0d1117;
+  --bg-3:        #111820;
+  --surface:     #161e28;
+  --border:      rgba(79,163,224,0.10);
+  --border-hover:rgba(79,163,224,0.22);
 
-  --text:        #f0ede8;
-  --text-muted:  #7a7a8a;
-  --text-faint:  #3a3a48;
+  --text:        #e8edf5;
+  --text-muted:  #6b7fa0;
+  --text-faint:  #2a3347;
 
-  --accent:      #c8a96e;      /* dorado cálido */
-  --accent-dim:  rgba(200,169,110,0.12);
-  --accent-glow: rgba(200,169,110,0.25);
+  --accent:      #4fa3e0;
+  --accent-dim:  rgba(79,163,224,0.12);
+  --accent-glow: rgba(79,163,224,0.28);
 
-  --teal:        #4ecdc4;
-  --teal-dim:    rgba(78,205,196,0.10);
+  --teal:        #38d9c0;
+  --teal-dim:    rgba(56,217,192,0.10);
 
-  /* Tipografía */
-  --font-display: 'Playfair Display', Georgia, serif;
+  /* Tipografía moderna sans */
+  --font-display: 'Syne', 'DM Sans', sans-serif;
   --font-body:    'DM Sans', sans-serif;
   --font-mono:    'JetBrains Mono', monospace;
 
@@ -57,19 +57,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Scrollbar personalizada */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
-/* Selección */
 ::selection {
   background: var(--accent);
   color: var(--bg);
 }
 
-/* ─── Layout helpers ────────────────────────────────────────────────────────── */
+/* ─── Layout ────────────────────────────────────────────────────────────────── */
 .container {
   max-width: var(--container);
   margin: 0 auto;
@@ -80,10 +78,10 @@ section {
   padding: var(--section-pad) 0;
 }
 
-/* ─── Tipografía global ─────────────────────────────────────────────────────── */
+/* ─── Tipografía ────────────────────────────────────────────────────────────── */
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  line-height: 1.15;
+  line-height: 1.1;
   font-weight: 700;
 }
 
@@ -141,6 +139,7 @@ img, video { max-width: 100%; display: block; }
   font-size: clamp(2rem, 5vw, 3.5rem);
   color: var(--text);
   margin-bottom: 1rem;
+  letter-spacing: -0.02em;
 }
 
 /* ─── Botones ────────────────────────────────────────────────────────────────── */
@@ -165,7 +164,7 @@ img, video { max-width: 100%; display: block; }
 }
 
 .btn-primary:hover {
-  background: #d4b87a;
+  background: #6db8e8;
   transform: translateY(-1px);
   box-shadow: 0 8px 30px var(--accent-glow);
 }
@@ -182,20 +181,42 @@ img, video { max-width: 100%; display: block; }
   transform: translateY(-1px);
 }
 
-/* ─── Línea decorativa ───────────────────────────────────────────────────────── */
 .divider {
   width: 100%;
   height: 1px;
   background: var(--border);
 }
 
-/* ─── Noise overlay global ───────────────────────────────────────────────────── */
+/* Noise overlay */
 body::after {
   content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.025;
+  opacity: 0.02;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* ─── Responsive global ─────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  :root {
+    --section-pad: clamp(3.5rem, 10vw, 5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-pad: 3rem;
+    --gutter: 1.1rem;
+  }
+
+  .btn {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.82rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.7rem, 8vw, 2.5rem);
+  }
 }

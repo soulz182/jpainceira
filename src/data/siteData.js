@@ -1,6 +1,6 @@
 // ─── Datos del portfolio ─────────────────────────────────────────────────────
 // Edita este archivo para actualizar todo el contenido de la web.
- 
+
 export const siteData = {
   name: 'Jesús Painceira',
   fullName: 'Jesús Manuel Painceira Pérez',
@@ -8,7 +8,7 @@ export const siteData = {
   location: 'Valencia, España',
   email: 'hola@jesuspainceira.dev',
   available: true,
- 
+
   hero: {
     headline: 'Construyo\ninterfaces\nque importan.',
     subline:
@@ -16,7 +16,7 @@ export const siteData = {
     cta: 'Ver mi trabajo',
     ctaSecondary: 'Hablemos',
   },
- 
+
   about: {
     bio: [
       'Me llamo Jesús, tengo 27 años y vivo en Valencia. Llevo más de cuatro años construyendo interfaces web que funcionan de verdad: desde landings que convierten hasta tiendas WooCommerce con miles de productos.',
@@ -25,17 +25,17 @@ export const siteData = {
     ],
     tags: ['Diseño UI/UX', 'Responsive', 'Accesibilidad', 'Performance', 'Figma → Código'],
   },
- 
+
   stack: [
     {
       category: 'Sólido',
       color: 'var(--accent)',
-      items: ['HTML5', 'CSS3 / SCSS', 'JavaScript (ES6+)', 'PHP', 'WordPress', 'WooCommerce', 'Shopify', 'PrestaShop', 'REST APIs', 'Figma', 'Git'],
+      items: ['HTML5', 'CSS3 / SCSS', 'JavaScript (ES6+)', 'PHP', 'WordPress', 'WooCommerce', 'Shopify', 'PrestaShop', 'Figma', 'Git'],
     },
     {
       category: 'En evolución',
       color: 'var(--teal)',
-      items: ['React', 'TypeScript', 'Next.js', 'Vite', 'Node.js'],
+      items: ['React', 'TypeScript', 'Next.js', 'Vite', 'REST APIs', 'Node.js'],
     },
     {
       category: 'Herramientas',
@@ -43,7 +43,7 @@ export const siteData = {
       items: ['VS Code', 'Webpack', 'Gulp', 'Postman', 'Vercel', 'cPanel', 'Trello', 'Notion'],
     },
   ],
- 
+
   projects: [
     {
       id: 1,
@@ -112,7 +112,7 @@ export const siteData = {
       featured: false,
     },
   ],
- 
+
   experience: [
     {
       company: 'Avantio',
@@ -155,7 +155,7 @@ export const siteData = {
       highlights: ['Soporte técnico', 'Redes', 'Sistemas'],
     },
   ],
- 
+
   services: [
     {
       icon: 'Monitor',
@@ -188,7 +188,7 @@ export const siteData = {
       desc: 'Actualizaciones, backups, corrección de errores, nuevas secciones y mejoras continuas. Para que tu web no sea un problema que tienes que gestionar.',
     },
   ],
- 
+
   social: [
     { name: 'GitHub', url: 'https://github.com/', icon: 'Github' },
     { name: 'LinkedIn', url: 'https://linkedin.com/', icon: 'Linkedin' },

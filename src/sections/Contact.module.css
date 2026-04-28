@@ -12,35 +12,38 @@
   transform: translateX(-50%);
   width: 80%;
   height: 400px;
-  background: radial-gradient(ellipse, rgba(200,169,110,0.05) 0%, transparent 70%);
+  background: radial-gradient(ellipse, var(--accent-dim) 0%, transparent 70%);
   pointer-events: none;
 }
 
 .inner {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: clamp(3rem, 8vw, 7rem);
+  gap: clamp(2.5rem, 7vw, 6rem);
   align-items: start;
+  position: relative;
+  z-index: 1;
 }
 
-/* ─── Izquierda ─────────────────────────────────────────────────────────── */
+/* ─── Izquierda ─────────────────────────────────────────── */
 .heading {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
   color: var(--text);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.1rem;
   line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 .heading em {
-  font-style: italic;
+  font-style: normal;
   color: var(--accent);
 }
 
 .text {
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   line-height: 1.85;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
   max-width: 420px;
 }
 
@@ -59,22 +62,20 @@
   transition: color var(--transition);
 }
 
-a.infoRow:hover {
-  color: var(--accent);
-}
+a.infoRow:hover { color: var(--accent); }
 
-/* ─── Formulario ─────────────────────────────────────────────────────────── */
+/* ─── Formulario ─────────────────────────────────────────── */
 .formWrap {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: clamp(1.5rem, 4vw, 2.5rem);
+  padding: clamp(1.5rem, 4vw, 2.25rem);
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.1rem;
 }
 
 .field {
@@ -85,7 +86,7 @@ a.infoRow:hover {
 
 .field label {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -103,6 +104,7 @@ a.infoRow:hover {
   resize: vertical;
   transition: border-color var(--transition), box-shadow var(--transition);
   outline: none;
+  width: 100%;
 }
 
 .field input:focus,
@@ -112,23 +114,20 @@ a.infoRow:hover {
 }
 
 .field input::placeholder,
-.field textarea::placeholder {
-  color: var(--text-faint);
-}
+.field textarea::placeholder { color: var(--text-faint); }
 
 .submit {
   align-self: flex-start;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 
-/* ─── Gracias ────────────────────────────────────────────────────────────── */
+/* ─── Gracias ────────────────────────────────────────────── */
 .thanks {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 3rem 1.5rem;
   gap: 1rem;
 }
 
@@ -143,16 +142,15 @@ a.infoRow:hover {
   to   { transform: rotate(360deg); }
 }
 
-.thanks h3 {
-  font-size: 1.4rem;
-  color: var(--text);
-}
+.thanks h3 { font-size: 1.4rem; color: var(--text); }
+.thanks p  { color: var(--text-muted); font-size: 0.9rem; }
 
-.thanks p {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-}
-
+/* ─── Responsive ─────────────────────────────────────────── */
 @media (max-width: 860px) {
   .inner { grid-template-columns: 1fr; }
+  .text  { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .formWrap { padding: 1.25rem; }
 }
