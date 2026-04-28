@@ -1,7 +1,12 @@
-import { ArrowUpRight } from 'lucide-react'
+import { useState } from 'react'
+import { ArrowUpRight, Globe } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { siteData } from '../data/siteData'
 import styles from './Projects.module.css'
+
+// Genera la URL del screenshot via Microlink (gratuito, sin API key)
+const screenshotUrl = (url) =>
+  `https://api.microlink.io?url=${encodeURIComponent(url)}&screenshot=true&meta=false&embed=screenshot.url`
 
 export default function Projects() {
   const titleRef = useScrollReveal()
@@ -25,10 +30,53 @@ export default function Projects() {
   )
 }
 
+// ── Visual: screenshot real o gradiente de fallback ───────────────────────────
+function ProjectVisual({ project }) {
+  const [loaded, setLoaded] = useState(false)
+  const [error, setError] = useState(false)
+
+  if (project.url && !error) {
+    return (
+      <div className={styles.visual}>
+        {/* Gradiente mientras carga */}
+        {!loaded && <div className={styles.visualFallback} />}
+
+        <img
+          src={screenshotUrl(project.url)}
+          alt={`Captura de ${project.title}`}
+          className={`${styles.visualImg} ${loaded ? styles.visualImgLoaded : ''}`}
+          onLoad={() => setLoaded(true)}
+          onError={() => setError(true)}
+          loading="lazy"
+        />
+
+        {/* Overlay oscuro sutil para legibilidad */}
+        <div className={styles.visualOverlay} />
+
+        {/* Icono de enlace externo en esquina */}
+        <div className={styles.visualBadge}>
+          <Globe size={11} />
+          <span>Live</span>
+        </div>
+      </div>
+    )
+  }
+
+  // Sin URL o error → gradiente con número decorativo
+  return (
+    <div className={styles.visual}>
+      <div className={styles.visualFallback} />
+      <div className={styles.visualInner}>
+        <span className={styles.visualNum}>0{project.id}</span>
+      </div>
+    </div>
+  )
+}
+
+// ── Card ──────────────────────────────────────────────────────────────────────
 function ProjectCard({ project, index, large }) {
   const ref = useScrollReveal()
 
-  // Si tiene url → <a> externo; si no → <div> no interactivo
   const Tag = project.url ? 'a' : 'div'
   const linkProps = project.url
     ? { href: project.url, target: '_blank', rel: 'noopener noreferrer' }
@@ -41,11 +89,7 @@ function ProjectCard({ project, index, large }) {
       ref={ref}
       style={{ '--accent-color': project.color }}
     >
-      <div className={styles.visual}>
-        <div className={styles.visualInner}>
-          <span className={styles.visualNum}>0{project.id}</span>
-        </div>
-      </div>
+      <ProjectVisual project={project} />
 
       <div className={styles.cardBody}>
         <div className={styles.cardMeta}>
@@ -62,7 +106,6 @@ function ProjectCard({ project, index, large }) {
           ))}
         </div>
 
-        {/* "Ver proyecto" solo si hay URL */}
         {project.url && (
           <div className={styles.cardLink}>
             <span>Ver proyecto</span>
