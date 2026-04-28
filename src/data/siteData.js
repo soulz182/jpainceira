@@ -30,17 +30,17 @@ export const siteData = {
     {
       category: 'Sólido',
       color: 'var(--accent)',
-      items: ['HTML5', 'CSS3 / SCSS', 'JavaScript (ES6+)', 'PHP', 'WordPress', 'WooCommerce', 'Shopify', 'PrestaShop', 'Figma', 'Git'],
+      items: ['HTML5', 'CSS3 / SCSS', 'JavaScript (ES6+)', 'React', 'REST APIs', 'PHP', 'WordPress', 'WooCommerce', 'Shopify', 'PrestaShop', 'Figma', 'Git'],
     },
     {
       category: 'En evolución',
       color: 'var(--teal)',
-      items: ['React', 'TypeScript', 'Next.js', 'Vite', 'REST APIs', 'Node.js'],
+      items: [ 'TypeScript', 'Next.js', 'Vite',  'Node.js'],
     },
     {
       category: 'Herramientas',
       color: '#818cf8',
-      items: ['VS Code', 'Webpack', 'Gulp', 'Postman', 'Vercel', 'cPanel', 'Trello', 'Notion'],
+      items: ['VS Code', 'Webpack', 'Gulp', 'Postman', 'Vercel', 'cPanel', 'Trello', 'Notion', 'Chrome DevTools'],
     },
   ],
 
