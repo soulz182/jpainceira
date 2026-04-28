@@ -47,12 +47,11 @@ export const siteData = {
   projects: [
     {
       id: 1,
-      title: 'Tienda online de moda local',
-      category: 'E-commerce · WooCommerce',
-      description:
-        'Diseño e integración completa de una tienda WooCommerce para una marca de moda valenciana. Tema custom desde cero con SCSS, filtros AJAX, pasarela de pago Redsys y rendimiento optimizado hasta 95 en PageSpeed.',
-      tags: ['WordPress', 'WooCommerce', 'SCSS', 'PHP', 'Redsys'],
-      year: '2023',
+      title: 'Aspai Obrador',
+      category: 'E-commerce · WooCommerce · Wordpress',
+      description: 'Desarrollo de la web para un obrador artesanal, implementando una interfaz responsive y optimizada. Trabajo en maquetación a medida, rendimiento y estructura de contenidos para mejorar la experiencia de usuario y la visibilidad del producto.',
+      tags: ['WordPress', 'WooCommerce', 'CSS', 'PHP', 'HTML', 'Javascript'],
+      year: '2022',
       color: '#4fa3e0',
       featured: true,
     },
@@ -120,7 +119,7 @@ export const siteData = {
       period: 'Diciembre 2022 — Diciembre 2025',
       description:
         'Desarrollo y mantenimiento de interfaces web en una empresa de software para gestión de alquileres vacacionales. Trabajo con equipos multidisciplinares, maquetación de nuevas funcionalidades y optimización del producto.',
-      highlights: ['HTML / CSS / JS', 'WordPress', 'SCSS', 'Responsive'],
+      highlights: ['HTML' ,'CSS' , 'JS', 'PHP' ,'WordPress', 'SCSS', 'Bootstrap' ],
     },
     {
       company: 'Ángel Martínez Disseny i Comunicació SL',
@@ -128,23 +127,23 @@ export const siteData = {
       period: 'Mayo 2022 — Diciembre 2022',
       description:
         'Desarrollo full stack en agencia de diseño y comunicación. Maquetación de proyectos web para clientes, desarrollo de funcionalidades custom y mantenimiento de sitios WordPress.',
-      highlights: ['WordPress', 'PHP', 'JavaScript', 'Diseño web'],
+      highlights: ['HTML' , 'CSS' ,'WordPress', 'Shopify' , 'WooCommerce' , 'PHP', 'JavaScript', 'Bootstrap' , 'Diseño web'],
     },
     {
       company: 'Glintt España',
       role: 'Freelance Web Developer',
       period: 'Febrero 2022 — Mayo 2022',
       description:
-        'Desarrollo web freelance para empresa del sector salud. Implementación de interfaces y componentes a medida para sus plataformas digitales.',
-      highlights: ['HTML', 'CSS', 'JavaScript', 'PHP'],
+        'Desarrollo web freelance para el sector farmacéutico, creando soluciones digitales para farmacias. Implementación de interfaces y componentes personalizados, integrando funcionalidades y optimizando la experiencia de usuario.',
+      highlights: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Prestashop', 'Sencha', 'ExtJS'],
     },
     {
       company: 'Information Solutions For Telemedicine SL',
       role: 'Full-stack Developer',
       period: 'Marzo 2019 — Octubre 2019',
       description:
-        'Desarrollo de aplicaciones web para el sector de la telemedicina. Implementación de interfaces de usuario y lógica de servidor para plataformas de atención sanitaria remota.',
-      highlights: ['PHP', 'JavaScript', 'MySQL', 'HTML/CSS'],
+        'Desarrollo de plataformas web para la digitalización de servicios sanitarios, incluyendo portales de pacientes y herramientas de gestión clínica. Implementación de interfaces y funcionalidades conectadas con sistemas médicos y servicios backend.',
+      highlights: ['PHP', 'JavaScript', 'MySQL', 'HTML/CSS', 'Java'],
     },
     {
       company: 'Hospital General Valencia',
