@@ -58,14 +58,14 @@ export const siteData = {
     },
     {
       id: 2,
-      title: 'Landing page para estudio de arquitectura',
-      category: 'Landing · Maquetación',
+      title: 'Web oficial Tantö',
+      category: 'Web · Portfolio / Banda',
       description:
-        'Maquetación pixel-perfect desde Figma de una landing para un estudio de arquitectura. Animaciones CSS al scroll, galería con Swiper.js y formulario de contacto con PHP.',
-      tags: ['HTML', 'SCSS', 'JavaScript', 'PHP', 'Figma'],
-      year: '2022',
-      color: '#38d9c0',
-      url: null,
+        'Desarrollo de la web oficial de Tantö utilizando React, Vite y Tailwind CSS. Creación de una interfaz moderna y responsive alineada con la identidad visual del proyecto, con estructura de componentes reutilizables, animaciones y optimización de rendimiento.',
+      tags: ['React', 'Vite', 'Tailwind CSS', 'JavaScript', 'Frontend'],
+      year: '2026',
+      color: '#ff0033',
+      url: 'https://tantobanda.com',
       featured: true,
     },
     {
