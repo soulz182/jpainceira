@@ -6,7 +6,7 @@ export const siteData = {
   fullName: 'Jesús Manuel Painceira Pérez',
   role: 'Desarrollador Front-End',
   location: 'Valencia, España',
-  email: 'hola@jesuspainceira.dev',
+  email: 'jesuspainceira@gmail.com',
   available: true,
 
   hero: {
@@ -53,6 +53,7 @@ export const siteData = {
       tags: ['WordPress', 'WooCommerce', 'CSS', 'PHP', 'HTML', 'Javascript'],
       year: '2022',
       color: '#4fa3e0',
+      url: 'https://aspai.es/',
       featured: true,
     },
     {
@@ -64,6 +65,7 @@ export const siteData = {
       tags: ['HTML', 'SCSS', 'JavaScript', 'PHP', 'Figma'],
       year: '2022',
       color: '#38d9c0',
+      url: null,
       featured: true,
     },
     {
@@ -75,6 +77,7 @@ export const siteData = {
       tags: ['HTML', 'CSS', 'JavaScript', 'Canvas API', 'Web Audio API'],
       year: '2023',
       color: '#818cf8',
+      url: null,
       featured: true,
     },
     {
@@ -86,6 +89,7 @@ export const siteData = {
       tags: ['PHP', 'MySQL', 'JavaScript', 'SCSS', 'PDF'],
       year: '2022',
       color: '#34d399',
+      url: null,
       featured: false,
     },
     {
@@ -97,6 +101,7 @@ export const siteData = {
       tags: ['Shopify', 'Liquid', 'JavaScript', 'CSS', 'Klaviyo'],
       year: '2023',
       color: '#2dd4bf',
+      url: null,
       featured: false,
     },
     {
@@ -108,6 +113,7 @@ export const siteData = {
       tags: ['HTML', 'SCSS', 'JavaScript', 'BEM', 'Storybook'],
       year: '2021',
       color: '#60a5fa',
+      url: null,
       featured: false,
     },
   ],

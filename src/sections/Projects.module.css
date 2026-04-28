@@ -238,3 +238,14 @@
   }
   .rowYear, .rowCategory, .rowTags { display: none; }
 }
+
+/* ─── Card como enlace ──────────────────────────────────── */
+.isLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.isLink:hover {
+  border-color: var(--accent-color, var(--accent));
+  transform: translateY(-4px);
+}
