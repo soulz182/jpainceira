@@ -54,10 +54,7 @@ function ProjectVisual({ project }) {
         <div className={styles.visualOverlay} />
 
         {/* Icono de enlace externo en esquina */}
-        <div className={styles.visualBadge}>
-          <Globe size={11} />
-          <span>Live</span>
-        </div>
+
       </div>
     )
   }
