@@ -220,3 +220,12 @@ body::after {
     font-size: clamp(1.7rem, 8vw, 2.5rem);
   }
 }
+
+/* ─── Ocultar cursor nativo en desktop ──────────────────────────────────────
+   El cursor custom de Cursor.jsx se encarga de todo. En táctil/móvil
+   no hay cursor custom así que dejamos el comportamiento por defecto.    */
+@media (hover: hover) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
