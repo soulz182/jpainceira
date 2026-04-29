@@ -98,7 +98,7 @@ export const siteData = {
       category: 'Web corporativa · Turismo',
       description:
         'Desarrollo frontend de la web de Home Holidays Rentals, empresa especializada en alquiler vacacional e inmobiliaria en la Costa de Barcelona y Costa Brava, centrado en la construcción de la interfaz y la experiencia de usuario mediante una navegación clara y coherente, priorizando la estructura del contenido, la claridad de la información y la adaptación a distintos dispositivos para asegurar una experiencia fluida en todo el recorrido del usuario.',
-      tags: ['Shopify', 'Liquid', 'JavaScript', 'CSS', 'Klaviyo'],
+      tags: ['HTML', 'SCSS', 'JavaScript', 'PHP', 'Bootstrap'],
       year: '2023',
       color: '#B2955D',
       url: 'https://www.homeholidays.rentals/',
