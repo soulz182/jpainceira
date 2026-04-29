@@ -64,11 +64,7 @@ export default function Hero() {
               <span className={styles.statNum}>200+</span>
               <span className={styles.statLabel}>proyectos</span>
             </div>
-            <div className={styles.statDiv} />
-            <div className={styles.stat}>
-              <span className={styles.statNum}>React</span>
-              <span className={styles.statLabel}>en curso</span>
-            </div>
+
           </div>
         </div>
 

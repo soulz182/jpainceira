@@ -99,8 +99,7 @@
 
 .titleLineAccent {
   display: block;
-  color: transparent;
-  -webkit-text-stroke: 2px var(--accent);
+  color: var(--accent);
   animation: fadeUp 0.7s 0.25s ease both;
 }
 
