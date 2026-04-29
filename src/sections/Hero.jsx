@@ -74,7 +74,7 @@ export default function Hero() {
             {/* Marco decorativo */}
             <div className={styles.photoFrame} />
             <img
-              src="/jesus.jpg"
+              src="/jesus.png"
               alt="Jesús Painceira"
               className={styles.photo}
             />

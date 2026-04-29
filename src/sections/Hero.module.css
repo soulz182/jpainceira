@@ -54,7 +54,7 @@
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1fr 420px;
+  grid-template-columns: 1fr 500px;
   gap: 4rem;
   align-items: center;
   width: 100%;
@@ -201,14 +201,12 @@
 .photoWrap {
   position: relative;
   width: 100%;
-  max-width: 380px;
 }
 
 /* Marco desplazado detrás */
 .photoFrame {
   position: absolute;
   inset: -12px -12px 12px 12px;
-  border: 1px solid var(--border);
   border-radius: 20px;
   pointer-events: none;
   z-index: 0;
@@ -231,9 +229,7 @@
 
 /* Chip "Front-End Dev" flotante */
 .chip {
-  position: absolute;
-  bottom: -1rem;
-  left: -1.5rem;
+
   z-index: 2;
   display: flex;
   align-items: center;
@@ -249,6 +245,8 @@
   color: var(--text-muted);
   backdrop-filter: blur(10px);
   white-space: nowrap;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .chipDot {
