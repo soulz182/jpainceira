@@ -195,7 +195,6 @@ export const siteData = {
   ],
 
   social: [
-    { name: 'GitHub', url: 'https://github.com/', icon: 'Github' },
     { name: 'LinkedIn', url: 'https://linkedin.com/', icon: 'Linkedin' },
   ],
 }
