@@ -13,43 +13,50 @@ export default function Experience() {
           <h2 className="section-title">Trayectoria</h2>
         </div>
 
-        <div className={styles.timeline}>
-          {siteData.experience.map((job, i) => (
-            <ExperienceItem key={i} job={job} index={i} last={i === siteData.experience.length - 1} />
-          ))}
+        {/* Grid: índice izquierda — detalle derecha */}
+        <div className={styles.grid}>
+          <div className={styles.index}>
+            {siteData.experience.map((job, i) => (
+              <IndexItem key={i} job={job} index={i} />
+            ))}
+          </div>
+          <div className={styles.cards}>
+            {siteData.experience.map((job, i) => (
+              <ExpCard key={i} job={job} index={i} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
   )
 }
 
-function ExperienceItem({ job, index, last }) {
+function IndexItem({ job, index }) {
   const ref = useScrollReveal()
-
   return (
-    <div className={`reveal delay-${index + 1} ${styles.item}`} ref={ref}>
-      {/* Línea vertical */}
-      <div className={styles.track}>
-        <div className={styles.dot} />
-        {!last && <div className={styles.line} />}
+    <div className={`reveal delay-${index + 1} ${styles.indexItem}`} ref={ref}>
+      <span className={styles.indexNum}>0{index + 1}</span>
+      <span className={styles.indexCompany}>{job.company}</span>
+    </div>
+  )
+}
+
+function ExpCard({ job, index }) {
+  const ref = useScrollReveal()
+  return (
+    <div className={`reveal delay-${index + 1} ${styles.card}`} ref={ref}>
+      <div className={styles.cardTop}>
+        <div>
+          <h3 className={styles.role}>{job.role}</h3>
+          <span className={styles.company}>{job.company}</span>
+        </div>
+        <span className={styles.period}>{job.period}</span>
       </div>
-
-      {/* Contenido */}
-      <div className={styles.body}>
-        <div className={styles.meta}>
-          <span className={styles.period}>{job.period}</span>
-        </div>
-
-        <h3 className={styles.role}>{job.role}</h3>
-        <span className={styles.company}>{job.company}</span>
-
-        <p className={styles.desc}>{job.description}</p>
-
-        <div className={styles.highlights}>
-          {job.highlights.map((h) => (
-            <span className="tag" key={h}>{h}</span>
-          ))}
-        </div>
+      <p className={styles.desc}>{job.description}</p>
+      <div className={styles.highlights}>
+        {job.highlights.map((h) => (
+          <span className="tag" key={h}>{h}</span>
+        ))}
       </div>
     </div>
   )

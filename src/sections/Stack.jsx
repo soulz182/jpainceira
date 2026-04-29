@@ -1,9 +1,14 @@
+import { useState } from 'react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { siteData } from '../data/siteData'
 import styles from './Stack.module.css'
 
 export default function Stack() {
   const titleRef = useScrollReveal()
+  // Todos los items del stack en una sola lista plana con metadata de grupo
+  const allItems = siteData.stack.flatMap((group) =>
+    group.items.map((item) => ({ item, color: group.color, category: group.category }))
+  )
 
   return (
     <section id="stack" className={styles.stack}>
@@ -11,48 +16,58 @@ export default function Stack() {
         <div className={`reveal ${styles.header}`} ref={titleRef}>
           <p className="section-label">Stack</p>
           <h2 className="section-title">Tecnologías</h2>
-          <p className={styles.subtitle}>
-            Lo que uso a diario, lo que estoy aprendiendo y las herramientas que me acompañan.
-          </p>
         </div>
 
-        <div className={styles.groups}>
-          {siteData.stack.map((group, gi) => (
-            <StackGroup key={gi} group={group} index={gi} />
-          ))}
-        </div>
+        {/* Grupos como tabs / filtros */}
+        <StackCloud items={allItems} groups={siteData.stack} />
       </div>
     </section>
   )
 }
 
-function StackGroup({ group, index }) {
+function StackCloud({ items, groups }) {
+  const [active, setActive] = useState(null) // null = todos
   const ref = useScrollReveal()
 
+  const visible = active
+    ? items.filter((i) => i.category === active)
+    : items
+
   return (
-    <div
-      className={`reveal delay-${index + 1} ${styles.group}`}
-      ref={ref}
-    >
-      <div className={styles.groupHeader}>
-        <span
-          className={styles.groupDot}
-          style={{ background: group.color }}
-        />
-        <h3 className={styles.groupTitle}>{group.category}</h3>
+    <div className={`reveal ${styles.cloud}`} ref={ref}>
+      {/* Filtros */}
+      <div className={styles.filters}>
+        <button
+          className={`${styles.filter} ${active === null ? styles.filterActive : ''}`}
+          onClick={() => setActive(null)}
+        >
+          Todos
+        </button>
+        {groups.map((g) => (
+          <button
+            key={g.category}
+            className={`${styles.filter} ${active === g.category ? styles.filterActive : ''}`}
+            style={active === g.category ? { '--fc': g.color } : {}}
+            onClick={() => setActive(active === g.category ? null : g.category)}
+          >
+            <span className={styles.filterDot} style={{ background: g.color }} />
+            {g.category}
+          </button>
+        ))}
       </div>
 
-      <ul className={styles.items}>
-        {group.items.map((item) => (
-          <li key={item} className={styles.item}>
-            <span
-              className={styles.itemLine}
-              style={{ background: group.color }}
-            />
+      {/* Nube de pills */}
+      <div className={styles.pills}>
+        {visible.map(({ item, color, category }) => (
+          <span
+            key={item + category}
+            className={styles.pill}
+            style={{ '--pc': color }}
+          >
             {item}
-          </li>
+          </span>
         ))}
-      </ul>
+      </div>
     </div>
   )
 }

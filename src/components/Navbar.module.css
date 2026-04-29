@@ -1,151 +1,210 @@
 .nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   z-index: 100;
-  padding: 1.5rem 0;
-  transition: background 0.4s ease, padding 0.4s ease, border-bottom 0.4s ease;
-  border-bottom: 1px solid transparent;
+  padding: 1.4rem 0;
+  transition: background 0.4s ease, padding 0.4s ease;
 }
 
 .nav.scrolled {
-  background: rgba(8, 12, 18, 0.88);
+  background: rgba(8,12,18,0.82);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  padding: 1rem 0;
+  padding: 0.9rem 0;
   border-bottom: 1px solid var(--border);
 }
 
 .inner {
   display: flex;
   align-items: center;
-  gap: 2rem;
 }
 
+/* ─── Logo ───────────────────────────────────────────────── */
 .logo {
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 800;
-  letter-spacing: -0.02em;
   color: var(--text);
-  flex-shrink: 0;
+  letter-spacing: -0.04em;
+  margin-right: auto;
 }
 
-.logoAccent { color: var(--accent); }
+.logo:hover { color: var(--accent); }
 
+/* ─── Links desktop ──────────────────────────────────────── */
 .links {
   display: flex;
-  gap: 2rem;
-  margin-left: auto;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .link {
-  font-size: 0.82rem;
-  font-weight: 400;
-  letter-spacing: 0.03em;
-  color: var(--text-muted);
-  transition: color var(--transition);
   position: relative;
-  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 0.9rem;
+  overflow: hidden;
+  border-radius: 6px;
 }
 
-.link::after {
+/* Número pequeño arriba, label abajo — al hover se intercambian */
+.linkNum {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  line-height: 1;
+  transform: translateY(0);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.6;
+}
+
+.linkLabel {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1;
+  margin-top: 0.2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.link:hover .linkLabel {
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.link:hover .linkNum {
+  opacity: 1;
+  color: var(--accent);
+}
+
+/* Fondo sutil al hover */
+.link::before {
   content: '';
   position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--accent);
-  transition: width var(--transition);
+  inset: 0;
+  background: var(--accent-dim);
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.link:hover { color: var(--text); }
-.link:hover::after { width: 100%; }
+.link:hover::before { opacity: 1; }
 
-.ctaBtn {
-  margin-left: 1rem;
-  flex-shrink: 0;
-  font-size: 0.78rem;
-  padding: 0.5rem 1.1rem;
-}
-
-.ctaBtn::before {
-  content: '';
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--bg);
-  margin-right: 0.4rem;
-  animation: pulse-dot 2s infinite;
-}
-
-@keyframes pulse-dot {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(8,12,18,0.5); }
-  50%       { box-shadow: 0 0 0 4px rgba(8,12,18,0); }
-}
-
-/* ─── Burger ─────────────────────────────────────────────────── */
+/* ─── Burger ─────────────────────────────────────────────── */
 .burger {
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
   background: none;
-  border: 1px solid var(--border);
-  color: var(--text);
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: var(--radius-sm);
+  border: none;
+  padding: 0;
   margin-left: auto;
-  transition: border-color var(--transition);
-  line-height: 0;
 }
 
-.burger:hover { border-color: var(--accent); }
+.burger span {
+  display: block;
+  height: 1.5px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.35s ease, opacity 0.35s ease, width 0.35s ease;
+  transform-origin: center;
+}
 
-/* ─── Mobile menu ────────────────────────────────────────────── */
+.burger span:nth-child(1) { width: 24px; }
+.burger span:nth-child(2) { width: 16px; }
+.burger span:nth-child(3) { width: 20px; }
+
+/* Cruz al abrirse */
+.burgerOpen span:nth-child(1) {
+  width: 22px;
+  transform: translateY(6.5px) rotate(45deg);
+}
+.burgerOpen span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.burgerOpen span:nth-child(3) {
+  width: 22px;
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ─── Mobile fullscreen ───────────────────────────────────── */
 .mobile {
-  display: none;
-  flex-direction: column;
-  padding: 0 var(--gutter);
-  gap: 0;
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.4s ease, padding 0.4s ease;
-  background: var(--bg-2);
-  border-top: 1px solid transparent;
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
 }
 
 .mobile.mobileOpen {
-  max-height: 500px;
-  padding: 0.5rem var(--gutter) 1.5rem;
-  border-top-color: var(--border);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobileClose {
+  position: absolute;
+  top: 1.5rem;
+  right: var(--gutter);
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  padding: 0 var(--gutter);
 }
 
 .mobileLink {
-  font-size: 1rem;
-  font-weight: 400;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 10vw, 3.5rem);
+  font-weight: 700;
   color: var(--text-muted);
-  padding: 0.85rem 0;
+  padding: 0.6rem 0;
   border-bottom: 1px solid var(--border);
-  transition: color var(--transition), padding-left var(--transition);
-  display: block;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+  letter-spacing: -0.02em;
 }
 
 .mobileLink:last-child { border-bottom: none; }
 
 .mobileLink:hover {
-  color: var(--accent);
+  color: var(--text);
   padding-left: 0.5rem;
 }
 
-/* ─── Breakpoints ────────────────────────────────────────────── */
-@media (max-width: 900px) {
-  .links { gap: 1.25rem; }
+.mobileLinkNum {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
 }
 
+/* ─── Breakpoints ─────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .links, .ctaBtn { display: none; }
-  .burger { display: flex; align-items: center; justify-content: center; }
-  .mobile { display: flex; }
+  .links { display: none; }
+  .burger { display: flex; }
 }

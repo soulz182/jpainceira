@@ -1,63 +1,63 @@
 import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
-import { siteData } from '../data/siteData'
+import { X } from 'lucide-react'
 import styles from './Navbar.module.css'
 
 const links = [
-  { label: 'Sobre mí', href: '#sobre-mi' },
-  { label: 'Stack', href: '#stack' },
-  { label: 'Proyectos', href: '#proyectos' },
+  { label: 'Sobre mí',    href: '#sobre-mi' },
+  { label: 'Stack',       href: '#stack' },
+  { label: 'Proyectos',   href: '#proyectos' },
   { label: 'Experiencia', href: '#experiencia' },
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Contacto', href: '#contacto' },
+  { label: 'Servicios',   href: '#servicios' },
+  { label: 'Contacto',    href: '#contacto' },
 ]
 
 export default function Navbar({ scrolled }) {
   const [open, setOpen] = useState(false)
 
-  const handleLink = () => setOpen(false)
-
   return (
     <header className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`}>
-        {/* Logo / nombre */}
-        <a href="#" className={styles.logo}>
-          <span className={styles.logoAccent}>J</span>P
-        </a>
 
-        {/* Nav desktop */}
+        <a href="#" className={styles.logo}>jp.</a>
+
+        {/* Desktop links — cada uno con su número */}
         <nav className={styles.links} aria-label="Navegación principal">
-          {links.map((l) => (
+          {links.map((l, i) => (
             <a key={l.href} href={l.href} className={styles.link}>
-              {l.label}
+              <span className={styles.linkNum}>0{i + 1}</span>
+              <span className={styles.linkLabel}>{l.label}</span>
             </a>
           ))}
         </nav>
 
-        {/* CTA disponibilidad */}
-        {siteData.available && (
-          <a href="#contacto" className={`btn btn-primary ${styles.ctaBtn}`}>
-            Disponible
-          </a>
-        )}
-
-        {/* Hamburger mobile */}
+        {/* Burger custom — tres líneas que se cruzan */}
         <button
-          className={styles.burger}
+          className={`${styles.burger} ${open ? styles.burgerOpen : ''}`}
           onClick={() => setOpen(!open)}
           aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
         >
-          {open ? <X size={20} /> : <Menu size={20} />}
+          <span /><span /><span />
         </button>
       </div>
 
-      {/* Menú mobile */}
+      {/* Menú mobile — fullscreen */}
       <div className={`${styles.mobile} ${open ? styles.mobileOpen : ''}`}>
-        {links.map((l) => (
-          <a key={l.href} href={l.href} className={styles.mobileLink} onClick={handleLink}>
-            {l.label}
-          </a>
-        ))}
+        <button className={styles.mobileClose} onClick={() => setOpen(false)}>
+          <X size={22} />
+        </button>
+        <nav className={styles.mobileLinks}>
+          {links.map((l, i) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className={styles.mobileLink}
+              onClick={() => setOpen(false)}
+            >
+              <span className={styles.mobileLinkNum}>0{i + 1}</span>
+              {l.label}
+            </a>
+          ))}
+        </nav>
       </div>
     </header>
   )
