@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { ArrowUpRight, Globe } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { siteData } from '../data/siteData'
 import styles from './Projects.module.css'
 
-// Genera la URL del screenshot via Microlink (gratuito, sin API key)
+// Fallback automático via Microlink cuando no hay imagen local
 const screenshotUrl = (url) =>
   `https://api.microlink.io?url=${encodeURIComponent(url)}&screenshot=true&meta=false&embed=screenshot.url`
 
@@ -30,36 +30,34 @@ export default function Projects() {
   )
 }
 
-// ── Visual: screenshot real o gradiente de fallback ───────────────────────────
 function ProjectVisual({ project }) {
   const [loaded, setLoaded] = useState(false)
   const [error, setError] = useState(false)
 
-  if (project.url && !error) {
+  // Prioridad: 1) imagen estática en /public, 2) screenshot Microlink, 3) gradiente
+  const src = project.image
+    ? project.image
+    : project.url && !error
+    ? screenshotUrl(project.url)
+    : null
+
+  if (src) {
     return (
       <div className={styles.visual}>
-        {/* Gradiente mientras carga */}
         {!loaded && <div className={styles.visualFallback} />}
-
         <img
-          src={screenshotUrl(project.url)}
+          src={src}
           alt={`Captura de ${project.title}`}
           className={`${styles.visualImg} ${loaded ? styles.visualImgLoaded : ''}`}
           onLoad={() => setLoaded(true)}
           onError={() => setError(true)}
           loading="lazy"
         />
-
-        {/* Overlay oscuro sutil para legibilidad */}
         <div className={styles.visualOverlay} />
-
-        {/* Icono de enlace externo en esquina */}
-
       </div>
     )
   }
 
-  // Sin URL o error → gradiente con número decorativo
   return (
     <div className={styles.visual}>
       <div className={styles.visualFallback} />
@@ -70,7 +68,6 @@ function ProjectVisual({ project }) {
   )
 }
 
-// ── Card ──────────────────────────────────────────────────────────────────────
 function ProjectCard({ project, index, large }) {
   const ref = useScrollReveal()
 

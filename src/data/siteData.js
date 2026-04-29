@@ -54,6 +54,7 @@ export const siteData = {
       year: '2022',
       color: '#4fa3e0',
       url: 'https://aspai.es/',
+      image: '/aspai.webp',
       featured: true,
     },
     {
@@ -66,6 +67,7 @@ export const siteData = {
       year: '2026',
       color: '#ff0033',
       url: 'https://tantobanda.com',
+      image: '/tanto.webp',
       featured: true,
     },
     {
@@ -78,6 +80,7 @@ export const siteData = {
       year: '2023',
       color: '#145490',
       url: 'https://igloo.scot/',
+      image: '/igloo.webp',
       featured: true,
     },
     {
@@ -90,6 +93,7 @@ export const siteData = {
       year: '2022',
       color: '#5ED100',
       url: 'https://aldaia.es/es/inicio/',
+      image: '/aldaia.webp',
       featured: true,
     },
     {
@@ -102,6 +106,7 @@ export const siteData = {
       year: '2023',
       color: '#B2955D',
       url: 'https://www.homeholidays.rentals/',
+      image: '/homeholidays.webp',
       featured: true,
     }
     
