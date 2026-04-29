@@ -1,4 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#0a0a0b"/>
-  <text x="4" y="24" font-family="Georgia, serif" font-weight="900" font-size="22" fill="#c8a96e">JP</text>
+  <rect width="32" height="32" rx="6" fill="#080c12"/>
+  <text
+    x="50%"
+    y="52%"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    font-family="'Plus Jakarta Sans', 'DM Sans', sans-serif"
+    font-weight="800"
+    font-size="13"
+    letter-spacing="-0.5"
+    fill="#e8edf5"
+  >jp.</text>
 </svg>
