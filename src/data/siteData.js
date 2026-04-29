@@ -12,7 +12,7 @@ export const siteData = {
   hero: {
     headline: 'Construyo\ninterfaces\nque importan.',
     subline:
-      'Front-end developer con base sólida en HTML, CSS y JavaScript. Ahora con React en la mano y sin miedo a lo que viene.',
+      'Front-end developer centrado en crear interfaces fluidas, claras y pensadas para usarse de verdad.',
     cta: 'Ver mi trabajo',
     ctaSecondary: 'Hablemos',
   },
@@ -21,7 +21,7 @@ export const siteData = {
     bio: [
       'Me llamo Jesús, tengo 27 años y vivo en Valencia. Llevo más de cuatro años construyendo interfaces web que funcionan de verdad: desde landings que convierten hasta tiendas WooCommerce con miles de productos.',
       'Mi punto fuerte no es solo escribir código que funciona, sino entender por qué debe funcionar así. Me obsesiona el detalle visual, la jerarquía tipográfica, el comportamiento en mobile y que todo cargue rápido.',
-      'Fuera del código, hago música bajo el nombre Tantö. Esa doble vida entre lo técnico y lo artístico es lo que da forma a mi manera de entender el diseño: no como decoración, sino como lenguaje.',
+      'Fuera del código, hago música en mi grupo Tantö. Esa mezcla entre lo técnico y lo creativo influye en mi forma de diseñar: buscando siempre coherencia, ritmo y claridad.',
     ],
     tags: ['Diseño UI/UX', 'Responsive', 'Accesibilidad', 'Performance', 'Figma → Código'],
   },
@@ -158,33 +158,33 @@ export const siteData = {
   services: [
     {
       icon: 'Monitor',
-      title: 'Maquetación web',
-      desc: 'Convierto diseños de Figma o Adobe XD en código real, limpio y responsive. Pixel-perfect cuando importa, adaptable cuando tiene que serlo.',
+      title: 'Interfaces desde diseño a código',
+      desc: 'Paso de Figma a código real, limpio y responsive, cuidando el detalle y la coherencia en toda la interfaz.',
     },
     {
       icon: 'ShoppingCart',
-      title: 'E-commerce',
-      desc: 'Tiendas online en WooCommerce, Shopify o PrestaShop. Integración de pasarelas de pago, flujos de compra optimizados y rendimiento cuidado.',
+      title: 'Tiendas online que funcionan',
+      desc: 'Desarrollo de e-commerce con flujos claros, integración de pagos y una experiencia pensada para convertir.',
     },
     {
       icon: 'Code2',
-      title: 'Desarrollo JavaScript',
-      desc: 'Lógica interactiva, formularios avanzados, peticiones a APIs, animaciones personalizadas. Vanilla o React, según lo que necesite el proyecto.',
+      title: 'Interacción y lógica',
+      desc: 'Formularios, APIs, animaciones y comportamiento dinámico, adaptado a lo que necesita cada proyecto.',
     },
     {
       icon: 'Zap',
-      title: 'Optimización y performance',
-      desc: 'Auditorías de rendimiento, mejora de Core Web Vitals, lazy loading, compresión de assets y todo lo que hace que una web cargue rápido de verdad.',
+      title: 'Rendimiento real',
+      desc: 'Optimización de carga, Core Web Vitals y todo lo necesario para que la web sea rápida de verdad.',
     },
     {
       icon: 'Palette',
-      title: 'Proyectos creativos',
-      desc: 'Webs que van más allá del catálogo: identidades digitales, portfolios, proyectos artísticos. Algo de código, algo de arte, mucho detalle.',
+      title: 'Webs con identidad',
+      desc: 'Proyectos donde diseño y desarrollo van de la mano, con atención al detalle y una estética cuidada.',
     },
     {
       icon: 'Wrench',
-      title: 'Mantenimiento WordPress',
-      desc: 'Actualizaciones, backups, corrección de errores, nuevas secciones y mejoras continuas. Para que tu web no sea un problema que tienes que gestionar.',
+      title: 'Soporte y evolución',
+      desc: 'Mantenimiento, mejoras continuas y solución de problemas para que la web siga funcionando sin complicaciones.',
     },
   ],
 
